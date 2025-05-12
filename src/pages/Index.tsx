@@ -1,12 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { VideoCallProvider } from "@/contexts/VideoCallContext";
+import VideoCallLayout from "@/components/VideoCallLayout";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <header className="bg-primary/20 backdrop-blur-sm p-4 shadow-sm">
+        <div className="container">
+          <h1 className="text-xl font-bold text-primary-foreground">FaceTime Clone</h1>
+        </div>
+      </header>
+      
+      <main className="flex-1 container py-4">
+        <div className="h-[calc(100vh-8rem)]">
+          <VideoCallProvider>
+            <VideoCallLayout />
+          </VideoCallProvider>
+        </div>
+      </main>
     </div>
   );
 };
